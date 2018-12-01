@@ -21,7 +21,7 @@ rl.on('line', (line) => {
 
 	if (Number(enemyIndex) == 0)
 	{
-		if (!isNaN(line))
+		if (Number.isInteger(Number(line)))
 		{
 			enemyIndex = 2 * Number(line); //Two inputs per enemy: name and point value...
 			enemyIndex += 2; //We don't want this if to catch, again.  We continue to different inputs regarding waves when we reach 3.
@@ -41,7 +41,7 @@ rl.on('line', (line) => {
 		enemyKey = line;
 		enemyIndex--;
 
-		if (!isNaN(line))
+		if (Number.isInteger(Number(line)))
 		{
 			console.log("\nSuper. You're the one who gets to read it.")
 		}
@@ -52,7 +52,7 @@ rl.on('line', (line) => {
 
 	else if (Number(enemyIndex) > 3)
 	{
-		if (!isNaN(line))
+		if (Number.isInteger(Number(line)))
 		{
 			enemyVal = Number(line);
 
@@ -80,7 +80,7 @@ rl.on('line', (line) => {
 	{
 		//Get the last value for the last key, and then start doing something different.
 
-		if (!isNaN(line))
+		if (Number.isInteger(Number(line)))
 		{
 			enemyVal = Number(line);
 
@@ -106,7 +106,7 @@ rl.on('line', (line) => {
 
 	else if (Number(waveVals.length) == 0) //Once the user decides how many waves there are, this if won't catch again.
 	{
-		if (!isNaN(line))
+		if (Number.isInteger(Number(line)))
 		{
 			waveVals.length = Number(line);
 			console.log("\nOf how many points should the first wave consist?\n");
@@ -122,7 +122,7 @@ rl.on('line', (line) => {
 
 	else if (Number(waveIndex) < Number(waveVals.length - 1))
 	{
-		if (!isNaN(line))
+		if (Number.isInteger(Number(line)))
 		{
 			waveVals[waveIndex] = Number(line);
 			waveIndex++;
@@ -137,7 +137,7 @@ rl.on('line', (line) => {
 		rl.prompt();
 	}
 
-	else if (!isNaN(line))
+	else if (Number.isInteger(Number(line)))
 	{
 		console.log("\nOkay, here's the lineup...");
 		waveVals[waveIndex] = Number(line);
