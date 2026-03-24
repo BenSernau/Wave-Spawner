@@ -2,13 +2,14 @@ let cloneVal = 0; //Use an integer to keep track of clones if the user has accid
 let enemyName = ""; //We use two prompts to discern the key and the value before asserting the key/value pair, so we need to reference both of them.
 let enemyVal = 0;
 let enemyIndex = 0; //We retrieve this from the user.  While it's above a certain threshold, we prompt the user for key/value pairs.
+let keyIndex = 0; //When the user has finished the map, this is for deciding which key/value pair the program's gonna choose for the wave.
+let newEnemy = undefined;
 let waveIndex = 0; //For referencing where we are in the following array.  We're actually going to reuse it b/c we're going to iterate through the same array twice.
-const waveVals = []; //Array of maximum point values for each wave.
+let weakestEnemy = undefined;
+
 const enemyList = [];
 const enemyNames = new Set();
-let newEnemy = undefined;
-let keyIndex = 0; //When the user has finished the map, this is for deciding which key/value pair the program's gonna choose for the wave.
-let weakestEnemy = undefined;
+const waveVals = []; //Array of maximum point values for each wave.
 
 const readline = require('readline');
 const rl = readline.createInterface({ //Set up the i/o interface for the user
@@ -93,7 +94,7 @@ rl.on('line', (line) => {
 
 		else
 		{
-			console.log("\nTry again, wise guy.");
+			console.log("\nTry again, wise guy.\n");
 		}
 		
 		rl.prompt();
