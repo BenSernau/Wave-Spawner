@@ -1,8 +1,8 @@
 let cloneVal = 0; //Use an integer to keep track of clones if the user has accidentally or impertinently included duplicates.
-let enemyName = ""; //We use two prompts to discern the key and the value before asserting the key/value pair, so we need to reference both of them.
+let enemyName = ""; //We use two prompts to discern the name and the value before asserting the name/value pair, so we need to reference both of them.
 let enemyVal = 0;
-let enemyIndex = 0; //We retrieve this from the user.  While it's above a certain threshold, we prompt the user for key/value pairs.
-let keyIndex = 0; //When the user has finished the map, this is for deciding which key/value pair the program's gonna choose for the wave.
+let enemyIndex = 0; //We retrieve this from the user.  While it's above a certain threshold, we prompt the user for name/value pairs.
+let keyIndex = 0; //When the user has finished the array, this is for deciding which name/value pair the program's gonna choose for the wave.
 let newEnemy = undefined;
 let waveIndex = 0; //For referencing where we are in the following array.  We're actually going to reuse it b/c we're going to iterate through the same array twice.
 let weakestEnemy = undefined;
