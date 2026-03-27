@@ -32,7 +32,7 @@ The algorithm takes a random greedy approach to wave generation, including enemi
 
 ### Structures
 
-The program begins by establishing a dialogue with the user and initializing structures to store the user’s data. Most fundamentally, these structures are the array for each enemy’s name-value combination and the array of point maxima. Variables store more intermediate information, including a reference to the “weakest” enemy with the lowest value as well as both a set of enemy names and reference to the current enemy in order to determine the weakest enemy. 
+The program begins by establishing a dialogue with the user and initializing structures to store the user’s data. Most fundamentally, these structures are the array for each enemy’s name-value combination and the array of point maxima. Variables store more intermediate information, including a reference to the “weakest” enemy with the lowest value as well as both a set of enemy names and reference to the current enemy in order to determine the weakest enemy.
 
 ### Enemy Input
 
