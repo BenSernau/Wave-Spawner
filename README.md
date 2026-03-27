@@ -6,9 +6,9 @@ A popular mechanic in many single-player games, an “arena” often describes a
 
 To engage players effectively, arenas need to deliver progressively more difficult enemy waves without feeling outright unfair at any point. To this end, not only does the program receive enemy names and corresponding point values, but it also requires the user to establish specific point maxima for every wave.
 
-Avoiding full automation, the application seeks only to illuminate what enemy waves would look like hypothetically. For example, consider an especially tough 6-point enemy in a 15-point wave. If the enemy appears in the wave twice, the user may decide that the scenario is too difficult and increase the value of the enemy accordingly.
+Avoiding full automation, the application seeks only to suggest what enemy waves would look like hypothetically. For example, consider an especially tough 6-point enemy in a 15-point wave. If the enemy appears in the wave twice, the user may decide that the scenario is too difficult and increase the value of the enemy accordingly.
 
-Game development is ultimately a creative endeavor, and human beings should have the final say in how their arenas work. Still, this tool simulates an arena’s waves of enemies to help developers create a balanced experience that aligns the player’s arsenal with reasonable challenges.
+Game development is a creative endeavor, and human beings should have the final say in how their arenas work. Still, this tool simulates an arena’s waves of enemies to help developers create a balanced experience that aligns the player’s arsenal with reasonable challenges.
 
 ## Input Format
 
@@ -24,13 +24,21 @@ As flexible as input can be in terms of value, type must remain consistent. Acco
 
 The algorithm takes a random greedy approach to wave generation, including enemies in waves by subtracting enemies’ point values from a wave’s point maximum until that wave has no more available points. This behavior repeats for as many waves as the user requests. Furthermore, if a random enemy’s value exceeds a wave’s maximum, the algorithm falls back to the enemy with the lowest value, completing the wave with a copy of the weakest enemy instead of a random enemy.
 
+### Structures
+
 The program begins by establishing a dialogue with the user and initializing structures to store the user’s data. Most fundamentally, these structures are the array for each enemy’s name-value combination and the array of point maxima. Variables store more intermediate information, including a reference to the “weakest” enemy with the lowest value as well as both a set of enemy names and reference to the current enemy in order to determine the weakest enemy. 
+
+### Enemy Input
 
 Now, the program requests the number of enemies from the user, prompting the user to provide every enemy’s name and value in points. Prompts alternate between names and values until the user has defined all enemies. Names may be numbers or empty strings, though the program advises against such assignments.
 
 Whenever the user creates an enemy, the program adds the enemy’s name to the set of names. If the user duplicates an enemy, the program adds the clone counter to the end of the duplicate’s name and increments the clone counter. Also, if the program has not identified the weakest enemy or if the latest enemy’s value is less than the weakest enemy’s value, the new enemy becomes the weakest enemy.
 
+### Wave Input
+
 After receiving the roster of enemies, the program requests the number of waves from the user, prompting the user to provide the point maximum for each wave. No generation begins until the user provides appropriate input for all necessary values. If the user fails to provide appropriate input at any point, a prompt simply repeats.
+
+### Wave Generation
 
 The program announces its advancement to the generation phase in the terminal. For each wave, the program begins to iterate through the point maximum, generating random enemies as long as those enemies’ values fit within the maximum. If an enemy’s value is too high to fit into a wave’s remaining points, the program appends the weakest enemy to the wave and indicates by how many points the total value of enemies exceeds the wave’s maximum. Note that the program never exceeds a wave’s maximum if at least 1 enemy has a point value of 1. Finally, the program announces the termination of the generation process and exits the code.
 
