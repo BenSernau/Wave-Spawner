@@ -36,7 +36,7 @@ The program begins by establishing a dialogue with the user and initializing str
 
 ### Enemy Input
 
-Now, the program requests the number of enemies from the user, prompting the user to provide every enemy’s name and value in points. Prompts alternate between names and values until the user has defined all enemies. Names may be numbers or empty strings, though the program advises against such assignments.
+Now, the program requests the number of enemies from the user, prompting the user to provide every enemy’s name and value in points. Prompts alternate between names and values until the user has defined all enemies. Again, names may be numbers or empty strings, though the program advises against such assignments.
 
 Whenever the user creates an enemy, the program adds the enemy’s name to the set of names. If the user duplicates an enemy, the program adds the clone counter to the end of the duplicate’s name and increments the clone counter. Also, if the program has not identified the weakest enemy or if the latest enemy’s value is less than the weakest enemy’s value, the new enemy becomes the weakest enemy.
 
