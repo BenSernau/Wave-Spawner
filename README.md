@@ -1,3 +1,9 @@
+# How to Run:
+
+1. Download and extract the zip file to a folder of your choice.
+2. Open any terminal and navigate to the folder that contains wavespawner.js.
+3. Type "node wavespawner.js" and enter the dialogue.
+
 ## Overview
 
 A popular mechanic in many single-player games, an “arena” often describes a limited space in which to dispatch waves of enemies. This application receives as input enemy names and their respective point values to simulate the production of enemy waves, thereby aiding in arena design.
