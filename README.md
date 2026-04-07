@@ -48,6 +48,30 @@ After receiving the roster of enemies, the program requests the number of waves 
 
 The program announces its advancement to the generation phase in the terminal. For each wave, the program begins to iterate through the point maximum, generating random enemies as long as those enemies’ values fit within the maximum. If an enemy’s value is too high to fit into a wave’s remaining points, the program appends the weakest enemy to the wave and indicates by how many points the total value of enemies exceeds the wave’s maximum. Note that the program never exceeds a wave’s maximum if at least 1 enemy has a point value of 1. Finally, the program announces the termination of the generation process and exits the code.
 
+```mermaid
+flowchart TD
+  A[Start program] --> B[Prompt for number of enemy types]
+  B --> C[Collect enemy names and point values]
+  C --> D[Track weakest enemy and handle duplicates]
+  D --> E[Prompt for number of waves]
+  E --> F[Collect point maxima]
+  F --> G[Begine wave generation]
+  G --> H[Select random enemy]
+  H --> I{Does enemy fit in remaining points?}
+  I -- Yes --> J[Add enemy to wave]
+  J --> K{Points remaining?}
+  K -- Yes --> H
+  K -- No --> L[Print completed wave]
+
+  I -- No --> M[Add weakest enemy instead]
+  M --> N[Report point overflow]
+  N --> K
+
+  L --> O{More waves?}
+  O -- Yes --> G
+  O -- No --> P[End program]
+```
+
 ## Constraints and Assumptions
 
 Overall, this program assumes users will include values that make sense. For instance, an enemy’s point value should not exceed a wave’s maximum value. While such a discrepancy is not an error, it will result in unhelpful output.
