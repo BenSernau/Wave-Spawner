@@ -62,7 +62,7 @@ flowchart TD
   J --> K{Points remaining?}
   K -- Yes --> H
   K -- No --> N[Print completed wave]
-  N --> L[Report point overflow]
+  N --> L[Report point overflow if applicable]
 
   I -- No --> M[Add weakest enemy instead]
   M --> K
